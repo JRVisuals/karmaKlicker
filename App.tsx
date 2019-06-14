@@ -9,6 +9,7 @@ export default function App() {
 
   const initialState = {
       playerScore: 0,
+      playerMS: 0,
   };
 
   const reducer = (state, action) => {
@@ -18,7 +19,8 @@ export default function App() {
           case 'updateScore':
           return {
               ...state,
-              playerScore: action.newScore
+              playerScore: action.newScore.playerScore,
+              playerMs: action.newScore.playerMs
           };
           
           default:
